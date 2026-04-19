@@ -1,58 +1,93 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistem Presensi SD Negeri Deyangan 2
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Laravel](https://img.shields.io/badge/Laravel-11.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.3-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-## About Laravel
+Sistem Presensi Web Modern untuk mengelola data kehadiran siswa-siswi secara efisien di SD Negeri Deyangan 2. Dibangun menggunakan framework Laravel yang tangguh dan tampilan antarmuka yang modern dengan Tailwind CSS.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Fitur Utama
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Autentikasi Aman:** Sistem login yang dilindungi khusus untuk Guru / Tenaga Pendidik.
+- **Dashboard Interaktif:** Ringkasan *real-time* mengenai total siswa, kelas, dan status presensi hari ini (Hadir, Izin, Sakit, Alpa).
+- **Manajemen Data Kelas (CRUD):** Tambah, ubah, dan hapus data kelas dengan mudah.
+- **Manajemen Data Siswa (CRUD):** Kelola profil siswa lengkap beserta Nomor Induk Siswa (NIS) dan penempatannya di masing-masing kelas.
+- **Presensi Harian:** Antarmuka pencatatan kehadiran yang sangat intuitif, terbagi berdasarkan kelas dan tanggal.
+- **Responsif:** Tampilan yang dioptimalkan untuk berbagai ukuran layar (Desktop, Tablet, maupun Mobile).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛠️ Teknologi yang Digunakan
 
-## Learning Laravel
+- **Backend:** Laravel 11.x
+- **Frontend:** Blade Templates, Tailwind CSS, Alpine.js
+- **Database:** SQLite / MySQL / PostgreSQL (Sesuai Konfigurasi Lingkungan)
+- **Authentication:** Laravel Breeze
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 📋 Persyaratan Sistem
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Sebelum menjalankan aplikasi ini, pastikan sistem Anda telah menginstal:
+- PHP >= 8.2
+- Composer
+- Node.js & NPM
+- Database Server (MySQL / MariaDB / SQLite)
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## ⚙️ Instalasi
 
-## Agentic Development
+Ikuti langkah-langkah berikut untuk menjalankan project ini di komputer lokal Anda:
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+1. **Clone repositori ini:**
+   ```bash
+   git clone https://github.com/username/sekolah.git
+   cd sekolah
+   ```
 
-```bash
-composer require laravel/boost --dev
+2. **Instal dependensi PHP:**
+   ```bash
+   composer install
+   ```
 
-php artisan boost:install
-```
+3. **Instal dependensi Frontend (NPM):**
+   ```bash
+   npm install
+   ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+4. **Konfigurasi Environment:**
+   Salin file `.env.example` menjadi `.env` dan atur konfigurasi database Anda.
+   ```bash
+   cp .env.example .env
+   ```
 
-## Contributing
+5. **Generate Application Key:**
+   ```bash
+   php artisan key:generate
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+6. **Jalankan Migrasi dan Seeder (Untuk mendapatkan data awal/dummy):**
+   ```bash
+   php artisan migrate --seed
+   ```
 
-## Code of Conduct
+7. **Compile aset Frontend:**
+   ```bash
+   npm run build
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+8. **Jalankan local server:**
+   ```bash
+   php artisan serve
+   ```
 
-## Security Vulnerabilities
+   Aplikasi kini dapat diakses melalui `http://localhost:8000`.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🔑 Akun Demo (Default Seeder)
 
-## License
+Jika Anda menjalankan migrasi dengan seeder, Anda dapat menggunakan kredensial berikut untuk masuk:
+- **Email:** `guru@example.com`
+- **Password:** `password`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🤝 Berkontribusi
+
+Kontribusi selalu diterima! Jika Anda menemukan bug atau memiliki saran perbaikan, silakan buat *Pull Request* atau ajukan *Issue* di repositori ini.
+
+## 📄 Lisensi
+
+Proyek ini berlisensi di bawah [MIT License](https://opensource.org/licenses/MIT).
